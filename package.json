@@ -16,6 +16,7 @@
   "bin": {
     "bitron": "./dist/cli.js"
   },
+  "scripts": {
     "build": "npx tsc && yarn eslint src && yarn prettier src --write",
     "bitron": "npm run build && node dist/cli"
   },
