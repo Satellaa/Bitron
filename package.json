@@ -1,0 +1,40 @@
+{
+  "name": "bitron",
+  "version": "0.1.0",
+  "description": "Validator and JSON Generator for MMT (Monster Memory Tracker)",
+  "author": "Lilac",
+  "license": "AGPL-3.0-or-later",
+  "main": ".dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "bitron": "./dist/cli.js"
+  },
+    "build": "npx tsc && yarn eslint src && yarn prettier src --write",
+    "bitron": "npm run build && node dist/cli"
+  },
+  "dependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "commander": "^12.1.0",
+    "fp-ts": "^2.16.9",
+    "fs": "^0.0.1-security",
+    "io-ts": "^2.2.21",
+    "js-yaml": "^4.1.0",
+    "typescript": "^5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.9.0",
+    "eslint": "^9.14.0",
+    "globals": "^15.12.0",
+    "prettier": "^3.3.3",
+    "typescript-eslint": "^8.13.0"
+  }
+}
