@@ -66,4 +66,4 @@ The following environment variables can be used to configure Bitron:
 | Environment Variable | Description | Default Value |
 |---------------------|-------------|---------------|
 | `BITRON_INPUT_PATH` | Default input directory path | `"cases"` |
-| `BITRON_OUTPUT_PATH` | Default output file name | `"results"` |
+| `BITRON_OUTPUT_PATH` | Default output directory path | `"results"` |
