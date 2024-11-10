@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Command } from 'commander';
 import * as path from 'node:path';
 import { pipe } from 'fp-ts/function';
