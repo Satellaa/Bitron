@@ -55,7 +55,7 @@ npx bitron
 
 | Parameter | Description | Default | Required |
 |-----------|-------------|---------|----------|
-| `--input-dir` | Path to the data directory in monster-memory repo | `./cases` | Yes |
+| `--input-dir` | Path to the data directory in monster-memory repo | `./cases` | No |
 | `--output-dir` | Directory where the JSON output will be saved | `./results` | No |
 | `--no-output` | Skip JSON output generation | `false` | No |
 
