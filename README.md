@@ -12,7 +12,7 @@ Before using Bitron, you need to:
 
 1. Clone the monster-memory repository which contains the YAML files:
 ```bash
-git clone https://github.com/your-username/monster-memory.git
+git clone https://github.com/satellaa/monster-memory.git
 ```
 
 2. Install Bitron either globally:
