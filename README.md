@@ -17,12 +17,12 @@ git clone https://github.com/satellaa/monster-memory-cases.git
 
 2. Install Bitron either globally:
 ```bash
-npm install -g @lilac/bitron
+npm install -g @lilacgrimoire/bitron
 ```
 
 Or locally in your project:
 ```bash
-npm install @lilac/bitron
+npm install @lilacgrimoire/bitron
 ```
 
 ## Usage
