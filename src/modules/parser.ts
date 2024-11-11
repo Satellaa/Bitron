@@ -37,8 +37,7 @@ const parseYamlContent = (
   pipe(
     YamlContent.decode(data),
     E.mapLeft(
-      (errors) =>
-        new ParseError(filePath, errors.map(formatParseError))
+      (errors) => new ParseError(filePath, errors.map(formatParseError))
     )
   );
 
@@ -49,11 +48,9 @@ const parseCategory = (
   pipe(
     MonsterMemoryCategory.decode(category),
     E.mapLeft(
-      (errors) =>
-        new ParseError(categoryPath, errors.map(formatParseError))
+      (errors) => new ParseError(categoryPath, errors.map(formatParseError))
     )
   );
-
 
 const augmentContent = (content: t.TypeOf<typeof YamlContent>) => ({
   ...content,
@@ -102,9 +99,7 @@ const processMemoryCategory = (
       name: categoryName,
       items,
     })),
-    TE.chain((category) =>
-      TE.fromEither(parseCategory(categoryPath, category))
-    )
+    TE.chain((category) => TE.fromEither(parseCategory(categoryPath, category)))
   );
 };
 

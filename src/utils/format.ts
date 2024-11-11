@@ -2,11 +2,7 @@ import * as t from 'io-ts';
 import * as O from 'fp-ts/Option';
 import * as E from 'fp-ts/Either';
 import { pipe } from 'fp-ts/function';
-import {
-  ParseError,
-  ParseErrorDetail,
-  ParseErrors,
-} from './errors';
+import { ParseErrorDetail, ParseErrors } from './errors';
 import {
   MEMORY_STATUS_VALUES,
   MemoryStatus,

@@ -1,7 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as TE from 'fp-ts/TaskEither';
-import { MonsterMemoryCategory } from './types';
 
 export const readDir = (dirPath: string): TE.TaskEither<Error, fs.Dirent[]> =>
   TE.tryCatch(
@@ -17,7 +16,7 @@ export const readFile = (filePath: string): TE.TaskEither<Error, string> =>
 
 export const writeOutput = (
   outputPath: string,
-  data: MonsterMemoryCategory[]
+  data: unknown
 ): TE.TaskEither<Error, void> =>
   TE.tryCatch(
     () =>
