@@ -1,7 +1,7 @@
 {
   "name": "@lilac/bitron",
   "version": "0.1.0",
-  "description": "Validator and JSON Generator for MMT (Monster Memory Tracker)",
+  "description": "Command-line tool for parsing memory cases and generating JSON output for the Monster Memory Tracker (MMT)",
   "author": "Lilac",
   "license": "AGPL-3.0-or-later",
   "main": ".dist/index.js",
