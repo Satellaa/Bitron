@@ -1,6 +1,6 @@
 {
   "name": "@lilacgrimoire/bitron",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Command-line tool for parsing memory cases and generating JSON output for the Monster Memory Tracker (MMT)",
   "author": "lilac",
   "license": "AGPL-3.0-or-later",
