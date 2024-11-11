@@ -11,6 +11,7 @@ import { makeDir, writeOutput } from './utils/filesystem';
 
 const DEFAULT_INPUT_PATH = process.env.BITRON_INPUT_PATH || './cases';
 const DEFAULT_OUTPUT_PATH = process.env.BITRON_OUTPUT_PATH || './results';
+const OUTPUT_FILE_NAME = 'cases.json';
 
 const parseConfig = () => {
   const options = new Command()
@@ -48,7 +49,7 @@ const run = async () => {
                   new Error(`Failed to create output directory: ${error}`)
               ),
               TE.chain(() =>
-                writeOutput(path.join(config.outputDir, 'api.json'), data)
+                writeOutput(path.join(config.outputDir, OUTPUT_FILE_NAME), data)
               )
             )
     )
