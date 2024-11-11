@@ -6,7 +6,8 @@ import * as TE from 'fp-ts/TaskEither';
 import * as A from 'fp-ts/Array';
 import * as yaml from 'js-yaml';
 import { pipe } from 'fp-ts/function';
-import { validateYamlContent, validateCategory } from '../modules/validators';
+import { ParseError } from '../utils/errors';
+import { formatParseError } from '../utils/format';
 import {
   YamlContent,
   MonsterMemoryCategory,
@@ -29,6 +30,31 @@ const parseYaml = (
     (error) => new Error(`Failed to parse YAML in ${filePath}: ${error}`)
   );
 
+const parseYamlContent = (
+  filePath: string,
+  data: unknown
+): E.Either<Error, t.TypeOf<typeof YamlContent>> =>
+  pipe(
+    YamlContent.decode(data),
+    E.mapLeft(
+      (errors) =>
+        new ParseError(filePath, errors.map(formatParseError))
+    )
+  );
+
+const parseCategory = (
+  categoryPath: string,
+  category: unknown
+): E.Either<Error, MonsterMemoryCategory> =>
+  pipe(
+    MonsterMemoryCategory.decode(category),
+    E.mapLeft(
+      (errors) =>
+        new ParseError(categoryPath, errors.map(formatParseError))
+    )
+  );
+
+
 const augmentContent = (content: t.TypeOf<typeof YamlContent>) => ({
   ...content,
   temporaryBanishedFAQs: content.temporaryBanishedFAQs ?? [],
@@ -44,7 +70,7 @@ const processYamlFile = (
   return pipe(
     readFile(filePath),
     TE.chain((content) => TE.fromEither(parseYaml(filePath, content))),
-    TE.chain((data) => TE.fromEither(validateYamlContent(filePath, data))),
+    TE.chain((data) => TE.fromEither(parseYamlContent(filePath, data))),
     TE.map((content) => ({
       id,
       info,
@@ -77,7 +103,7 @@ const processMemoryCategory = (
       items,
     })),
     TE.chain((category) =>
-      TE.fromEither(validateCategory(categoryPath, category))
+      TE.fromEither(parseCategory(categoryPath, category))
     )
   );
 };

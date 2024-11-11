@@ -11,27 +11,27 @@ export const createFieldRequirement = (
     : base;
 };
 
-export class ValidationError extends Error {
+export class ParseError extends Error {
   constructor(
     public readonly filePath: string,
-    public readonly details: ValidationErrorDetail[]
+    public readonly details: ParseErrorDetail[]
   ) {
     const messages = details.map((detail) => {
       const fieldPath = detail.path.join('.');
       return `- ${fieldPath}: ${detail.message}`;
     });
     super(
-      `Validation failed for ${filePath}:\n${messages.join('\n')}\n` +
+      `Parse failed for ${filePath}:\n${messages.join('\n')}\n` +
         `Please ensure all required fields are present with valid values.`
     );
-    this.name = 'ValidationError';
+    this.name = 'ParseError';
   }
 }
 
-export interface ValidationErrorDetail {
+export interface ParseErrorDetail {
   path: string[];
   message: string;
   value: unknown;
 }
 
-export type ValidationErrors = t.Errors;
+export type ParseErrors = t.Errors;
