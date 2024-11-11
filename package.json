@@ -1,5 +1,5 @@
 {
-  "name": "bitron",
+  "name": "@lilac/bitron",
   "version": "0.1.0",
   "description": "Validator and JSON Generator for MMT (Monster Memory Tracker)",
   "author": "Lilac",
