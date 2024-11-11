@@ -3,7 +3,7 @@
   <img src="/assets/Bitron-artwork.png" />
 </p>
 <p align="center">
-  <strong>A command-line tool for validating YAML files and generating JSON output for the Monster Memory Tracker (MMT) application. It validates and compiles information about what effects/states monsters remember or forget after being temporarily banished or flipped face-down.</strong>
+  <strong>Command-line tool for parsing YAML files and generating JSON output for the Monster Memory Tracker (MMT) application. It parses and transforms information about effects and states that monsters remember or forget after being temporarily banished or flipped face-down.</strong>
 </p>
 
 ## Prerequisites
@@ -41,13 +41,11 @@ git pull
 
 If installed globally:
 ```bash
-# Basic validation using default cases directory from monster-memory repo
 bitron
 ```
 
 If installed locally:
 ```bash
-# Using npx
 npx bitron
 ```
 
